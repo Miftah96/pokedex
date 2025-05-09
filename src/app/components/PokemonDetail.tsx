@@ -125,7 +125,7 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({ pokemon, species }) => {
             <div className="row mb-2">
               <div className="col-4 stat-label">Gender</div>
               <div className="col-8 stat-value">
-                ♂ {maleRatio.toFixed(1)}% ♀ {femaleRatio.toFixed(1)}%
+                <span className="male">♂</span> {maleRatio.toFixed(1)}% <span className="female">♀</span> {femaleRatio.toFixed(1)}%
               </div>
             </div>
             <div className="row mb-2">
@@ -159,7 +159,10 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({ pokemon, species }) => {
                   <div className="col-3 stat-label">{formattedStatName}</div>
                   <div className="col-2 stat-value">{stat.base_stat}</div>
                   <div className="col-7">
-                    <div className={`stat-bar ${mainType}-bar`} style={{ width: `${percentage}%` }}></div>
+                    <div className="d-flex float-left">
+                      <div className={`stat-bar ${mainType}-bar`} style={{ width: `${percentage}%` }}></div>
+                      <div className="stat-bar gray-bar" style={{ width: `${100 - percentage}%`}}></div>
+                    </div>
                   </div>
                 </div>
               )
@@ -169,7 +172,10 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({ pokemon, species }) => {
               <div className="col-3 stat-label">Total</div>
               <div className="col-2 stat-value">{totalStats}</div>
               <div className="col-7">
-                <div className={`stat-bar ${mainType}-bar`} style={{ width: `${(totalStats / 600) * 100}%` }}></div>
+                <div className="d-flex float-left">
+                  <div className={`stat-bar ${mainType}-bar`} style={{ width: `${(totalStats / 600) * 100}%` }}></div>
+                  <div className="stat-bar gray-bar" style={{ width: `${100 - (totalStats / 600) * 100}%`}}></div>
+                </div>
               </div>
             </div>
 

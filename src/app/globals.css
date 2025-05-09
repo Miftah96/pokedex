@@ -19,6 +19,7 @@
     --dark-color: #705848;
     --steel-color: #b8b8d0;
     --fairy-color: #ee99ac;
+    --gray-color: #d5d5d5;
 }
 
 * {
@@ -143,6 +144,17 @@ body {
   background: none;
   border: none;
   font-size: 1.5rem;
+
+  border-radius: 50%;        
+  padding: 0.5rem;        
+  transition: background 0.2s;
+}
+
+.detail-header .back-button:hover {
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .detail-header .favorite-button {
@@ -189,6 +201,8 @@ body {
 .detail-image img {
   max-height: 100%;
   max-width: 100%;
+  z-index: 3;
+  margin-bottom: -20%;
 }
 
 .detail-body {
@@ -221,7 +235,6 @@ body {
 
 .stat-bar {
   height: 6px;
-  border-radius: 3px;
   margin-top: 5px;
   margin-bottom: 15px;
 }
@@ -234,6 +247,14 @@ body {
 .stat-value {
   font-weight: 600;
   color: #333;
+}
+
+.stat-value span .male {
+  color: var(--water-color);
+}
+
+.stat-value span .female {
+  color: var(--fighting-color);
 }
 
 .grass-bg {
@@ -310,10 +331,22 @@ body {
 
 .grass-bar {
   background-color: var(--grass-color);
+  border-radius: 3px 0 0 3px;
+}
+
+.bug-bar {
+  background-color: var(--bug-color);
+  border-radius: 3px 0 0 3px;
+}
+
+.gray-bar {
+  background-color: var(--gray-color);
+  border-radius: 0 3px 3px 0;
 }
 
 .fire-bar {
   background-color: var(--fire-color);
+  border-radius: 3px 0 0 3px;
 }
 
 .water-bar {
