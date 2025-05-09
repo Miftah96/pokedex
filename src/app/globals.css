@@ -351,6 +351,7 @@ body {
 
 .water-bar {
   background-color: var(--water-color);
+  border-radius: 3px 0 0  3px;
 }
 
 .electric-bar {
